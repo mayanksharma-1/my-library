@@ -14,31 +14,41 @@ function Book(name, author, pages) {
 }
 
 function addBookToLibrary(book) {
-    console.log(`running addBookToLibrary with ${book}`)
-    const card = document.createElement("div");
-    card.classList.add('card');
-
-    const bookTitle = document.createElement("div");
-    bookTitle.classList.add('bookTitle');
-    bookTitle.innerText = book.name;
-
-    const bookAuthor = document.createElement("div");
-    bookAuthor.classList.add('bookAuthor');
-    bookAuthor.innerText = book.author;
-
-    const Pages = document.createElement("div");
-    Pages.classList.add('Pages');
-    Pages.innerText = book.pages;
+    console.log(`running addBookToLibrary with ${book.name} ${book.author} ${book.pages}`);
     
-    card.appendChild(bookTitle);
-    card.appendChild(bookAuthor);
-    card.appendChild(Pages);
-    
-    
+    myLibrary.push(book);
+    const listOfCards = [];
 
-    catalog.appendChild(card);
+    myLibrary.forEach(bookelement => {
+        
+        const card = document.createElement("div");
+        card.classList.add('card');
+        
+        const bookTitle = document.createElement("div");
+        bookTitle.classList.add('bookTitle');
+        bookTitle.innerText = bookelement.name;
+        
+        const bookAuthor = document.createElement("div");
+        bookAuthor.classList.add('bookAuthor');
+        bookAuthor.innerText = bookelement.author;
+        
+        const Pages = document.createElement("div");
+        Pages.classList.add('Pages');
+        Pages.innerText = bookelement.pages;
+        
+        card.appendChild(bookTitle);
+        card.appendChild(bookAuthor);
+        card.appendChild(Pages);
+    
+        listOfCards.push(card);
+    });
+    // console.log()
+    catalog.replaceChildren(...listOfCards);
+
 }
 
+defaultBook = new Book("The Final Empire","Brandon Sanderson",672);
+addBookToLibrary(defaultBook);
 
 openModal.addEventListener("click", () => {
   Modal.showModal();
