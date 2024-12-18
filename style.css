@@ -1,9 +1,32 @@
-.body{
+body{
     width: 100vw;
     height: 100vh;
+    background-color: #f8f5f5;
 }
 .card{
+    display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    background-color: #7da9af;
+    color: white;
+    border: solid #30afea;
+    font-size: 1.25rem;
+    height: 20vh;
+}
+
+.bookTitle,.bookAuthor,.Pages{
+    flex:auto;
+}
+.bookTitle{
+    padding-top: 10px;
+    font-weight: 570;
+    font-size: 1.75rem;
+}
+
+.catalog{
+    display: grid;
+    gap: 10px;
+    grid-template-rows: repeat(auto-fit,1fr);
+    grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
 }

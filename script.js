@@ -47,8 +47,18 @@ function addBookToLibrary(book) {
 
 }
 
-defaultBook = new Book("The Final Empire","Brandon Sanderson",672);
-addBookToLibrary(defaultBook);
+defaultBook1 = new Book("The Final Empire","Brandon Sanderson",672);
+defaultBook2 = new Book("Supper supportive","Sylica",1000);
+defaultBook3 = new Book("Cultivation Nerd","HolyMouse",400);
+defaultBook4 = new Book("The Last Orellen","Sieley",672);
+defaultBook5 = new Book("Harry Potter","idk",2000);
+
+addBookToLibrary(defaultBook1);
+addBookToLibrary(defaultBook2);
+addBookToLibrary(defaultBook3);
+addBookToLibrary(defaultBook4);
+addBookToLibrary(defaultBook5);
+
 
 openModal.addEventListener("click", () => {
   Modal.showModal();
