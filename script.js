@@ -97,3 +97,16 @@ document.getElementById('addBook-form').addEventListener('submit', function(even
     document.getElementById('addBook-form').reset();
 })
 
+const removeButtons = Array.from(document.getElementsByClassName('removeBtn'));
+
+removeButtons.forEach(removeButton => {
+    removeButton.addEventListener('click', (e) => {
+        e.preventDefault();
+        const index = e.target.parentElement.getAttribute('data-index'); // Get the index from the card
+        console.log(`${index} index card was clicked`);
+        let ItemToBeDeleted = myLibrary[index];
+        myLibrary.splice(index,1);
+        console.log(`${ItemToBeDeleted.name} was removed from myLibrary.`)
+        removeButton.parentElement.remove();
+    });
+});
