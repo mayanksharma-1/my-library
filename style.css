@@ -15,6 +15,14 @@ body{
     height: 20vh;
 }
 
+.removeBtn{
+    color: red;
+    background-color: #7da9af;
+    border: none;
+    align-self: flex-end;
+    font-weight: bolder;
+}
+
 .bookTitle,.bookAuthor,.Pages{
     flex:auto;
 }

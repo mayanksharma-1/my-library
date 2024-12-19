@@ -16,7 +16,6 @@ function Book(name, author, pages) {
 
 function addBookToLibrary(book) {
     console.log(`running addBookToLibrary with ${book.name} ${book.author} ${book.pages}`);
-    
     myLibrary.push(book);
     updateLibrary();
 }
@@ -33,8 +32,8 @@ function updateLibrary(){
 }
 
 function newCard(index) {
-    const bookelement = myLibrary[index];
-
+        const bookelement = myLibrary[index];
+    
         const card = document.createElement("div");
         card.classList.add('card');
         
@@ -50,6 +49,11 @@ function newCard(index) {
         Pages.classList.add('Pages');
         Pages.innerText = bookelement.pages;
         
+        const removeBtn = document.createElement("button");
+        removeBtn.classList.add('removeBtn');
+        removeBtn.innerText = "X";
+
+        card.appendChild(removeBtn);
         card.appendChild(bookTitle);
         card.appendChild(bookAuthor);
         card.appendChild(Pages);
@@ -58,12 +62,12 @@ function newCard(index) {
         return card
 }
 
+
 defaultBook1 = new Book("The Final Empire","Brandon Sanderson",672);
 defaultBook2 = new Book("Supper supportive","Sylica",1000);
 defaultBook3 = new Book("Cultivation Nerd","HolyMouse",400);
 defaultBook4 = new Book("The Last Orellen","Sieley",672);
 defaultBook5 = new Book("Harry Potter","idk",2000);
-
 addBookToLibrary(defaultBook1);
 addBookToLibrary(defaultBook2);
 addBookToLibrary(defaultBook3);
