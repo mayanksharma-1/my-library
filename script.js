@@ -19,9 +19,11 @@ function addBookToLibrary(book) {
     
     myLibrary.push(book);
     const listOfCards = [];
+    // console.log()
 
-    myLibrary.forEach(bookelement => {
-        
+    for (let index = 0; index < myLibrary.length; index++) {
+        const bookelement = myLibrary[index];
+
         const card = document.createElement("div");
         card.classList.add('card');
         
@@ -40,10 +42,13 @@ function addBookToLibrary(book) {
         card.appendChild(bookTitle);
         card.appendChild(bookAuthor);
         card.appendChild(Pages);
-    
+        
+        card.setAttribute('data-index',index)
+
         listOfCards.push(card);
-    });
-    // console.log()
+        
+    }
+
     catalog.replaceChildren(...listOfCards);
 
 }
