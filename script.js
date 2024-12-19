@@ -25,7 +25,15 @@ function updateLibrary(){
     const listOfCards = [];
 
     for (let index = 0; index < myLibrary.length; index++) {
-        const bookelement = myLibrary[index];
+        card = newCard(index)
+        listOfCards.push(card);
+    }
+
+    catalog.replaceChildren(...listOfCards);
+}
+
+function newCard(index) {
+    const bookelement = myLibrary[index];
 
         const card = document.createElement("div");
         card.classList.add('card');
@@ -47,11 +55,7 @@ function updateLibrary(){
         card.appendChild(Pages);
         
         card.setAttribute('data-index',index)
-
-        listOfCards.push(card);
-        
-    }
-    catalog.replaceChildren(...listOfCards);
+        return card
 }
 
 defaultBook1 = new Book("The Final Empire","Brandon Sanderson",672);
