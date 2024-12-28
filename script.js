@@ -6,7 +6,6 @@ const catalog = document.querySelector(".catalog");
 const myLibrary = [];
 
 function Book(name, author, pages) {
-  // the constructor...
   this.name = name;
   this.author = author;
   this.pages = pages;
@@ -115,7 +114,10 @@ function removeBtnsEventListenerSetup() {
       myLibrary.splice(index, 1);
       console.log(`${ItemToBeDeleted.name} was removed from myLibrary.`);
       removeButton.parentElement.remove();
+      updateLibrary();
     });
   });
 }
 
+// TODO: read/not read checkbox for each card
+// TODO: better CSS
